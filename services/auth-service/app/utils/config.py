@@ -15,4 +15,4 @@ class Settings:
 
     AES_SECRET: str = os.getenv("AES_SECRET")
     JWT_SECRET: str = os.getenv("JWT_SECRET")
-    CSRF_SECRET: str = os.getenv("CSRF_SECRET")
+    # CSRF removed: CSRF_SECRET no longer used

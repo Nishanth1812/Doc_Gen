@@ -4,7 +4,7 @@ from app.utils.config import Settings
 
 
 def encrypt_token(token: str):
-    key = settings.AES_SECRET.encode()[:32]
+    key = Settings.AES_SECRET.encode()[:32]
     aes = AESGCM(key)
 
     nonce = os.urandom(12)
@@ -18,7 +18,7 @@ def encrypt_token(token: str):
 
 
 def decrypt_token(ciphertext: str, nonce: str):
-    key = settings.AES_SECRET.encode()[:32]
+    key = Settings.AES_SECRET.encode()[:32]
     aes = AESGCM(key)
 
     decrypted = aes.decrypt(
